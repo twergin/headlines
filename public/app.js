@@ -20,6 +20,7 @@ angular.module('Headlines', ['ngRoute'])
         controller: 'ScienceCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/',
+        controller: 'MainCtrl'
       });
   }]);

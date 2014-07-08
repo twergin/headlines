@@ -7,37 +7,46 @@ angular.module('Headlines')
 //tech - "http://api.feedzilla.com/v1/categories/30/articles.json"
 //sports - "http://api.feedzilla.com/v1/categories/27/articles.json"
 
-$scope.newsArray = ['19', '3', '8', '30', '27'];
-$scope.linkArray = [];
-$scope.newsArrayLength = $scope.newsArray.length;
+$scope.articles = [];
 
-$scope.linkBuilder = function() {for (var i = 0; i < $scope.newsArrayLength; i++) {
-	$scope.link = $scope.newsArray[i];
-    $scope.linkArray.push('http://api.feedzilla.com/v1/categories/' + $scope.link + '/articles.json');
-    }
-    
+function News(apiLink) {
+	this.apiLink = apiLink,
+	this.description,
+	this.date,
+	this.title,
+	this.summary,
+	this.source,
+	this.sourceUrl,
+
+	News.fillData = function() {
+	$.getJSON(apiLink, function(data){
+
+					this.description = data.description.replace(/ News/g, ''),
+					this.title = data.articles[0].title,
+					this.summary = data.articles[0].summary,
+					this.source = data.articles[0].source,
+					this.sourceUrl = data.articles[0].source_url,
+					this.date = data.articles[0].publish_date,
+
+	$scope.articles.push(this);
+	
+	}).then(function() {
+		$scope.$apply(function () {
+            $scope.articles = $scope.articles;
+        });
+	})
 }
 
-$scope.linkBuilder();
+News.fillData();
 
-$scope.linkArray.forEach(function(item, index, array) {
-   
 
-$.getJSON(item, function(data){
-	$scope.cat = data.description.replace(/ News/g, '');
-	$scope.title = data.articles[0].title;
-	$scope.summary = data.articles[0].summary;
-	$scope.source = data.articles[0].source;
-	$scope.sourceLink = data.articles[0].source_url;
+}
 
-$('.section-title.' + $scope.cat).text($scope.cat);
-$('.article-text.' + $scope.cat).text($scope.summary);
-$('.article-title.' + $scope.cat).text($scope.title);
-$('.article-source.' + $scope.cat).text($scope.source);
-$('.article-source.' + $scope.cat).prop('href', $scope.sourceLink);
-
-	});
-});
+$scope.sportsNews = new News('http://api.feedzilla.com/v1/categories/27/articles.json');
+$scope.scienceNews = new News('http://api.feedzilla.com/v1/categories/8/articles.json');
+$scope.technologyNews = new News('http://api.feedzilla.com/v1/categories/30/articles.json');
+$scope.politicsNews = new News('http://api.feedzilla.com/v1/categories/3/articles.json');
+$scope.worldNews = new News('http://api.feedzilla.com/v1/categories/19/articles.json');
 
 }]);
 

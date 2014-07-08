@@ -3,24 +3,32 @@ angular.module('Headlines', ['ngRoute'])
     $locationProvider.html5Mode(true);
 
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/home.html',
+      .when('/news', {
+        templateUrl: '/news/views/home.html',
         controller: 'MainCtrl'
       })
-      .when('/world', {
-        templateUrl: 'views/world.html',
+      .when('/news/world', {
+        templateUrl: '/news/views/page.html',
         controller: 'WorldCtrl'
       })
-      .when('/politics', {
-        templateUrl: 'views/politics.html',
-        controller: 'PoliticsCtrl'
+      .when('/news/us', {
+        templateUrl: '/news/views/page.html',
+        controller: 'UsCtrl'
       })
-      .when('/science', {
-        templateUrl: 'views/science.html',
+      .when('/news/science', {
+        templateUrl: '/news/views/page.html',
         controller: 'ScienceCtrl'
       })
+      .when('/news/business', {
+        templateUrl: '/news/views/page.html',
+        controller: 'BusinessCtrl'
+      })
+      .when('/news/sports', {
+        templateUrl: '/news/views/page.html',
+        controller: 'SportsCtrl'
+      })
       .otherwise({
-        redirectTo: '/',
+        redirectTo: '/news',
         controller: 'MainCtrl'
       });
   }]);

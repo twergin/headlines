@@ -1,11 +1,11 @@
 angular.module('Headlines')
-  .controller('WorldCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+  .controller('UsCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
 
 $scope.articles = [];
 
-$scope.pageHead = "World";
+$scope.pageHead = "U.S.";
 
-$scope.apiLink = 'http://api.feedzilla.com/v1/categories/19/articles.json';
+$scope.apiLink = 'http://api.feedzilla.com/v1/categories/7/articles.json'
 
 function News(num) {
 	this.num = num;

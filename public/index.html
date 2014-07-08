@@ -11,9 +11,10 @@
 		
 		<!-- CSS // FAVICONS // FONTS
         ============================================================== -->
-		<link rel="stylesheet" href="css/style.css">
+		
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
 		<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,700,400italic' rel='stylesheet' type='text/css'>
 		
 	</head>
@@ -22,16 +23,16 @@
 		
 	<div class="header">
 		
-		<h2 class="page-title">Today's Headlines</h2>
-		<h3 class="page-sub-title">No clutter.  Just news.</h3>
+		<h2 class="page-title" data-match-route="/news"><a href="/news">Today's Headlines</a></h2>
+		
 
 		<ul class="nav">
 			
-			<li data-match-route="/world" class="nav-link World"><a href="/world">World</a></li>
-			<li class="nav-link Politics"><a href="#">Politics</a></li>
-			<li class="nav-link Science"><a href="#">Science</a></li>
-			<li class="nav-link Technology"><a href="#">Technology</a></li>
-			<li class="nav-link Sports"><a href="#">Sports</a></li>
+			<li data-match-route="/news/world" class="nav-link World"><a href="/news/world">World</a></li>
+			<li data-match-route="/news/us" class="nav-link Us"><a href="/news/us">U.S.</a></li>
+			<li data-match-route="/news/science" class="nav-link Science"><a href="/news/science">Science</a></li>
+			<li data-match-route="/news/business" class="nav-link Business"><a href="/news/business">Business</a></li>
+			<li data-match-route="/news/sports" class="nav-link Sports"><a href="/news/sports">Sports</a></li>
 		</ul>
 	
 
@@ -43,6 +44,12 @@
 
 	</div>
 
+	<div class="footer">
+		
+	<p class="site-info">An open source news aggregator by <a href="http://tedwergin.com">Ted Wergin</a> using the <a href="https://code.google.com/p/feedzilla-api/">Feedzilla API</a>.</p>
+
+	</div>
+
 
 <script src="vendor/jquery-1.11.1.min.js"></script>
 <script src="vendor/angular.js"></script>
@@ -50,7 +57,16 @@
 <script src="app.js"></script>
 <script src="controllers/main.js"></script>
 <script src="controllers/world.js"></script>
+<script src="controllers/us.js"></script>
+<script src="controllers/science.js"></script>
+<script src="controllers/business.js"></script>
+<script src="controllers/sports.js"></script>
 
+<script type="text/javascript">
+	$(window).load(function() {
+		$('.footer').addClass('visible');
+	});
+</script>
 
 </body>
 

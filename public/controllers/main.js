@@ -10,16 +10,20 @@ angular.module('Headlines')
 $scope.articles = [];
 
 function News(apiLink) {
-	this.apiLink = apiLink,
-	this.description,
-	this.date,
-	this.title,
-	this.summary,
-	this.source,
-	this.sourceUrl,
+	this.apiLink = apiLink;
+	this.description;
+	this.date;
+	this.title;
+	this.summary;
+	this.source;
+	this.sourceUrl;
+	this.fillData();
+}
 
-	News.fillData = function() {
-	$.getJSON(apiLink, function(data){
+News.prototype = {
+	constructor: News,
+	fillData: function() {
+	$.getJSON(this.apiLink, function(data){
 
 					this.description = data.description.replace(/ News/g, ''),
 					this.title = data.articles[0].title,
@@ -32,19 +36,18 @@ function News(apiLink) {
 	
 	}).then(function() {
 		$scope.$apply(function () {
-            $scope.articles = $scope.articles;
+            $scope.articles;
         });
 	})
 }
 
-News.fillData();
+};
 
 
-}
 
 $scope.sportsNews = new News('http://api.feedzilla.com/v1/categories/27/articles.json');
 $scope.scienceNews = new News('http://api.feedzilla.com/v1/categories/8/articles.json');
-$scope.technologyNews = new News('http://api.feedzilla.com/v1/categories/30/articles.json');
+$scope.BusinessNews = new News('http://api.feedzilla.com/v1/categories/22/articles.json');
 $scope.politicsNews = new News('http://api.feedzilla.com/v1/categories/3/articles.json');
 $scope.worldNews = new News('http://api.feedzilla.com/v1/categories/19/articles.json');
 

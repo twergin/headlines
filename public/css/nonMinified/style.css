@@ -11,9 +11,9 @@ body {
 	width: 100%;
 	margin: auto;
 	padding: 1rem 0 0 0;
-	border-bottom: 1px solid #999999;
 	background: #292929;
 	color: #fbfbfb;
+	display: inline-block;
 }
 
 .page-title {
@@ -33,11 +33,20 @@ body {
 	margin-bottom: .5rem;
 }
 
-.nav {
-	display: inline-block;
-	margin-left: auto;
-	margin-right: auto;
+.nav-wrapper {
 	text-align: center;
+	display: inline-block;
+}
+
+.nav {
+	margin: auto;
+	text-align: center;
+	-webkit-margin-after: -.15rem;
+}
+.nav:after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .nav a {
@@ -49,7 +58,7 @@ body {
 }
 
 .nav-link {
-	display: block;
+	display: inline-block;
 	float: left;
 	color: #f5f5f5;
 	padding: .5rem .5rem 0 .5rem;
@@ -58,8 +67,23 @@ body {
 	font-size: 1rem;
 }
 
+@media (max-width: 450px) {
+	.nav-link {
+		padding-left: .2rem;
+		padding-right: .2rem;
+		font-size: .8rem;
+	}
+	.nav-link:last-of-type {
+		margin-right: 0;
+	}
+	.nav-link:first-of-type {
+		margin-left: 0;
+	}
+
+}
+
 .nav-link.World {
-	border-bottom: 3px solid #2172ff;
+	border-bottom: 3px solid #76afcf;
 }
 
 .nav-link.World:hover {
@@ -67,7 +91,7 @@ body {
 }
 
 .nav-link.Us {
-	border-bottom: 3px solid #4aff21;
+	border-bottom: 3px solid #b6cc66;
 }
 
 .nav-link.Us:hover {
@@ -75,7 +99,7 @@ body {
 }
 
 .nav-link.Science {
-	border-bottom: 3px solid #e1ff21;
+	border-bottom: 3px solid #d4b76a;
 }
 
 .nav-link.Science:hover {
@@ -83,7 +107,7 @@ body {
 }
 
 .nav-link.Business {
-	border-bottom: 3px solid #ff8121;
+	border-bottom: 3px solid #db8c58;
 }
 
 .nav-link.Business:hover {
@@ -91,16 +115,30 @@ body {
 }
 
 .nav-link.Sports {
-	border-bottom: 3px solid #ff2121;
+	border-bottom: 3px solid #ab4a3f;
 }
 
 .nav-link.Sports:hover {
 	border-bottom: 3px solid #fbfbfb;
 }
 
+.nav-link.Weather {
+	border-bottom: 3px solid #717dbd;
+}
+
+.nav-link.Weather:hover {
+	border-bottom: 3px solid #fbfbfb;
+}
+
 .container {
 	margin-top: 3rem;
 	min-height: 600px;
+}
+
+@media (max-width: 700px) {
+	.container {
+		margin-top: 2rem;
+	}
 }
 
 .category-title {
@@ -116,6 +154,12 @@ body {
 	margin: 0 auto 0 auto;
 	padding: 1rem;
 	border-bottom: 1px solid #999999;
+}
+
+@media (max-width: 700px) {
+	.article-box {
+		width: 85%;
+	}
 }
 
 .article-box:nth-child(even) {
@@ -148,6 +192,20 @@ body {
 .article-text {
 	font-size: 1rem;
 	text-align: justify;
+}
+
+.centered-text {
+	text-align: center;
+}
+
+.centered-text.attribution {
+	margin-top: 3rem;
+}
+
+.article-box img {
+	margin: 0 auto;
+	text-align: center;
+	display: block;
 }
 
 .footer {

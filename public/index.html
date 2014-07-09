@@ -2,7 +2,7 @@
 <html ng-app="Headlines">
     <head>
     
-		<title>Today's Headlines - No clutter.  Just news.</title>
+		<title>TodaysHeadlin.es - No clutter.  Just news.</title>
 		
 		<!-- META
         ============================================================== -->
@@ -11,10 +11,9 @@
 		
 		<!-- CSS // FAVICONS // FONTS
         ============================================================== -->
-		
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="icon" type="image/png" href="favicon.png"/>
+		<link rel="stylesheet" href="css/reset.min.css">
+		<link rel="stylesheet" href="css/style.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,700,400italic' rel='stylesheet' type='text/css'>
 		
 	</head>
@@ -25,16 +24,19 @@
 		
 		<h2 class="page-title" data-match-route="/news"><a href="/news">Today's Headlines</a></h2>
 		
+		<div class="nav-wrapper">
 
 		<ul class="nav">
 			
-			<li data-match-route="/news/world" class="nav-link World"><a href="/news/world">World</a></li>
-			<li data-match-route="/news/us" class="nav-link Us"><a href="/news/us">U.S.</a></li>
-			<li data-match-route="/news/science" class="nav-link Science"><a href="/news/science">Science</a></li>
-			<li data-match-route="/news/business" class="nav-link Business"><a href="/news/business">Business</a></li>
-			<li data-match-route="/news/sports" class="nav-link Sports"><a href="/news/sports">Sports</a></li>
+			<li data-match-route="/world" class="nav-link World"><a href="/world">World</a></li>
+			<li data-match-route="/us" class="nav-link Us"><a href="/us">U.S.</a></li>
+			<li data-match-route="/science" class="nav-link Science"><a href="/science">Science</a></li>
+			<li data-match-route="/business" class="nav-link Business"><a href="/business">Business</a></li>
+			<li data-match-route="/sports" class="nav-link Sports"><a href="/sports">Sports</a></li>
+			<li data-match-route="/weather" class="nav-link Weather"><a href="/weather">Weather</a></li>
 		</ul>
 	
+		</div>
 
 	</div>
 
@@ -46,21 +48,22 @@
 
 	<div class="footer">
 		
-	<p class="site-info">An open source news aggregator by <a href="http://tedwergin.com">Ted Wergin</a> using the <a href="https://code.google.com/p/feedzilla-api/">Feedzilla API</a>.</p>
+	<p class="site-info">An open source news aggregator by <a href="https://github.com/twergin">Ted Wergin</a> using the <a href="https://code.google.com/p/feedzilla-api/">Feedzilla API</a>.</p>
 
 	</div>
 
 
 <script src="vendor/jquery-1.11.1.min.js"></script>
-<script src="vendor/angular.js"></script>
-<script src="vendor/angular-route.js"></script>
-<script src="app.js"></script>
-<script src="controllers/main.js"></script>
-<script src="controllers/world.js"></script>
-<script src="controllers/us.js"></script>
-<script src="controllers/science.js"></script>
-<script src="controllers/business.js"></script>
-<script src="controllers/sports.js"></script>
+<script src="vendor/angular.min.js"></script>
+<script src="vendor/angular-route.min.js"></script>
+<script src="app.min.js"></script>
+<script src="controllers/main.min.js"></script>
+<script src="controllers/world.min.js"></script>
+<script src="controllers/us.min.js"></script>
+<script src="controllers/science.min.js"></script>
+<script src="controllers/business.min.js"></script>
+<script src="controllers/sports.min.js"></script>
+<script src="controllers/weather.min.js"></script>
 
 <script type="text/javascript">
 	$(window).load(function() {

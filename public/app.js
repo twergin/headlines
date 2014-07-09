@@ -3,32 +3,36 @@ angular.module('Headlines', ['ngRoute'])
     $locationProvider.html5Mode(true);
 
     $routeProvider
-      .when('/news', {
-        templateUrl: '/news/views/home.html',
+      .when('/', {
+        templateUrl: 'views/home.html',
         controller: 'MainCtrl'
       })
-      .when('/news/world', {
-        templateUrl: '/news/views/page.html',
+      .when('/world', {
+        templateUrl: 'views/page.html',
         controller: 'WorldCtrl'
       })
-      .when('/news/us', {
-        templateUrl: '/news/views/page.html',
+      .when('/us', {
+        templateUrl: 'views/page.html',
         controller: 'UsCtrl'
       })
-      .when('/news/science', {
-        templateUrl: '/news/views/page.html',
+      .when('/science', {
+        templateUrl: 'views/page.html',
         controller: 'ScienceCtrl'
       })
-      .when('/news/business', {
-        templateUrl: '/news/views/page.html',
+      .when('/business', {
+        templateUrl: 'views/page.html',
         controller: 'BusinessCtrl'
       })
-      .when('/news/sports', {
-        templateUrl: '/news/views/page.html',
+      .when('/sports', {
+        templateUrl: 'views/page.html',
         controller: 'SportsCtrl'
       })
+      .when('/weather', {
+        templateUrl: 'views/weather.html',
+        controller: 'WeatherCtrl'
+      })
       .otherwise({
-        redirectTo: '/news',
+        redirectTo: '/',
         controller: 'MainCtrl'
       });
   }]);

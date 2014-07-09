@@ -17,9 +17,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          
-
-          'js/main.min.js': ['site/js/src/main.js']
+          'public/controllers/main.min.js': ['public/controllers/main.js']
         }
       }
     },
@@ -27,8 +25,8 @@ module.exports = function(grunt) {
     cssmin: {
 
       minify: {
-        src: ['css/src/style.css'],
-        dest: 'css/style.min.css'
+        src: ['public/css/reset.css'],
+        dest: 'public/css/reset.min.css'
         
       }
     },

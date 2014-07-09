@@ -44,12 +44,12 @@ News.prototype = {
 };
 
 
-
-$scope.sportsNews = new News('http://api.feedzilla.com/v1/categories/27/articles.json');
+$scope.worldNews = new News('http://api.feedzilla.com/v1/categories/19/articles.json');
+$scope.usNews = new News('http://api.feedzilla.com/v1/categories/7/articles.json');
 $scope.scienceNews = new News('http://api.feedzilla.com/v1/categories/8/articles.json');
 $scope.BusinessNews = new News('http://api.feedzilla.com/v1/categories/22/articles.json');
-$scope.politicsNews = new News('http://api.feedzilla.com/v1/categories/3/articles.json');
-$scope.worldNews = new News('http://api.feedzilla.com/v1/categories/19/articles.json');
+$scope.sportsNews = new News('http://api.feedzilla.com/v1/categories/27/articles.json');
+
 
 }]);
 

@@ -1,0 +1,24 @@
+
+
+<div class="article-box">
+
+		<h3 class="article-title">Weather for {{ location }} - {{ time }}</h3>
+		<br>
+		<img src="{{ picUrl }}" class="centered-pic" alt="{{ picAlt }}" />
+		<br>
+		<p class="centered-text">{{ temp }}</p>
+		<br>
+		<p class="centered-text">{{ sky }}</p>
+		<br>
+		<p class="centered-text">Precipitation Today: {{ precip }}</p>
+		<br>
+		<p class="centered-text">Wind {{wind}}</p>
+		<br>
+		<p class="centered-text"><a href="{{ forecastUrl }}">View 10 day forecast</a></p>
+		<br>
+		<p class="centered-text attribution">Weather data from <a href="http://wunderground.com">Weather Underground</a>.</p>
+		<a href="http://wunderground.com"><img src="{{ attr.url }}" alt="Weather Underground Logo"></a>
+
+
+</div>
+		
